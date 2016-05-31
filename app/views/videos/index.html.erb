@@ -1,0 +1,20 @@
+<h1>Vídeos</h1>
+
+<div class="row">
+  <% @videos.each do |video| %>
+    <div class="col-md-3 thumb video-thumb">
+      <div class="like">
+        <span class="like-count"><%= video.likes %></span>
+        <span class="glyphicon glyphicon-heart"></span>
+      </div>
+      <%= link_to video, class: 'thumbnail' do %>
+        <%= image_tag video.thumbnail.url(:medium_nr) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-md-12 pull-right">
+    <%= link_to 'Upload new video', new_video_url, class: 'btn btn-primary' %>
+  </div>
+</div>

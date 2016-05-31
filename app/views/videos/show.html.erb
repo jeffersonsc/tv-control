@@ -1,0 +1,17 @@
+<h1>Videos#show</h1>
+<div class="row video-full" data-video-id="<%= @video.id %>">
+  <div class⁼"col-md-10">
+    <h1> <%= @video.name %> </h1>
+      <p class="small">
+        <%= link_to 'Back to videos' , videos_path %>
+
+      <% if @video.all_formats_encoded? %>
+        <video id="my-video" class="video-js" controls="" data-setup="{}" height="264" preload="auto", width= "640">
+          <source src="<%= @video.mp4_file.url %>" type="video/mp4">
+          <source src="<%= @video.webm_file.url %>" type="video/webm">
+        </video>
+      <% end %>
+    </p>
+  </div>
+</div>
+          
